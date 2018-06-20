@@ -52,6 +52,14 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
+        test: /\.css$/,
+        include: [
+          /src/,
+          '/node_modules/mint-ui/lib/' 
+         ],
+        loader: ['stylus-loader','vue-style-loader','css-loader','postcss-loader']
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
